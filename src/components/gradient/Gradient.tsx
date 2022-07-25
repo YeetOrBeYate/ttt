@@ -14,8 +14,6 @@ export default function Gradient({children}: GradientProps): ReactElement {
         <LinearGradient
         colors={['#2A000B', '#420011', '#99334D', '#CA97A4']}
         style={styles.gradient}/>
-        {/* <Text>Here is the home comp</Text>
-        <Button title='Game' onPress={() => navigation.navigate("Game" ,{gameId: 'fund'})}/> */}
         {children}
   </View>
   )

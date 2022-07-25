@@ -22,16 +22,16 @@ export default function Home({navigation}: HomeProps): ReactElement {
       <View style={styles.container}>
         <Image style={styles.logo} source={require('../../../assets/typescript_image.png')} />
         <View style={styles.buttonContainer}>
-          <Button onPress={() => navigation.navigate("Game" ,{gameId: 'fund'})}>
+          <Button style={styles.button} onPress={() => navigation.navigate("SinglePlayerGame" ,{gameId: 'fund'})}>
             <Text weight='400'>Game button</Text>
           </Button>
-          <Button>
+          <Button style={styles.button}>
             <Text weight='400'>Multi-player</Text>
           </Button>
-          <Button>
+          <Button style={styles.button}>
             <Text weight='400'>Login</Text>
           </Button>
-          <Button>
+          <Button style={styles.button}>
             <Text weight='400'>Settings</Text>
           </Button>
         </View>
