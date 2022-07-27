@@ -3,9 +3,10 @@ import React, {ReactElement} from 'react'
 import Text from '../text/Text'
 import styles from './Board.styles'
 
-type Cell = 'x' | 'o' | null;
+import {BoardState} from '../../utils/index'
+
 type BoardProps = {
-    state: [Cell, Cell, Cell, Cell, Cell, Cell, Cell, Cell, Cell];
+    state: BoardState;
     size: number;
     onCellPressed?: (index: number) => void
 }

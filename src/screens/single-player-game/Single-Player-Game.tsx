@@ -7,6 +7,8 @@ import { StackNavigatorParams } from '../../config/Navigator'
 import { RouteProp } from '@react-navigation/native';
 import { Gradient, Board } from '../../components/index'
 
+import { printFomatedBoard, BoardState, isEmpty, isFull, getAvailableMoves } from '../../utils'
+
 type GameProps = {
   route: RouteProp<StackNavigatorParams, "SinglePlayerGame">
 }
@@ -15,13 +17,19 @@ type GameProps = {
 
 export default function Game({route}: GameProps) {
 
+  const thing: BoardState = ['o', 'o', 'x', 'x', 'o', null, 'x', 'o', null]
+  printFomatedBoard(thing)
+  console.log('<<<<Empty',isEmpty(thing))
+  console.log('<<<<<Full?',isFull(thing))
+  console.log('>>>get', getAvailableMoves(thing))
+
   return (
     <Gradient>
       <Text>Here is the Game comp</Text>
       <Board 
-      state={['x', null, 'x', 'o', null, 'o', 'x', null, 'x']}
-      size={300}
-      onCellPressed={(index: any) => alert(index)}
+        state={['o', 'o', 'x', 'x', 'o', null, 'x', 'o', null]}
+        size={300}
+        onCellPressed={(index: any) => alert(index)}
       />
     </Gradient>
   )
